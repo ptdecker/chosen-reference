@@ -15,8 +15,9 @@ Created to make sure I had somewhat of an understanding of the minimum requireme
 * Installing (from the directory where your storing your projects):
 
     $ git clone https://github.com/ptdecker/chosen-reference.git
-    $ cd chosen-reference
+    $ cd chosen-reference/app
     $ npm update
+    $ cd ..
 
 * Running
 
