@@ -29,32 +29,32 @@ negative=$red'negative'$reset
 # Get things started
 
 clear
-echo -e $info'Welcome to the '$bold$green'LigoEngine'$reset' startup bash script.'
+echo -e $info'Welcome to the '$bold$green'Chosen Demo'$reset' startup bash script.'
 echo -e $info'Running pre-launch checklist...'
 
 # Validate that the Redis service is running
 
-echo -en $info'  - Redis service running? '
-upcheck=$(pgrep redis | wc -l);
-if [ $upcheck -ge 1 ]; then
-    echo -e $check
-else
-    echo -e $negative
-    echo -e $error'redis service is not running'
-    exit 1
-fi
+#echo -en $info'  - Redis service running? '
+#upcheck=$(pgrep redis | wc -l);
+#if [ $upcheck -ge 1 ]; then
+#    echo -e $check
+#else
+#    echo -e $negative
+#    echo -e $error'redis service is not running'
+#    exit 1
+#fi
 
 # Validate that the MySQL service is running
 
-echo -en $info'  - MySQL service running? '
-upcheck=$(pgrep mysql | wc -l);
-if [ $upcheck -ge 1 ]; then
-    echo -e $check
-else
-    echo -e $negative
-    echo -e $error'MySQL status check indicates an error'
-    exit 1
-fi
+#echo -en $info'  - MySQL service running? '
+#upcheck=$(pgrep mysql | wc -l);
+#if [ $upcheck -ge 1 ]; then
+#    echo -e $check
+#else
+#    echo -e $negative
+#    echo -e $error'MySQL status check indicates an error'
+#    exit 1
+#fi
 
 # If an application name was provided on the command line, pass it to node.js;
 # otherwise, start node.js in REPL mode.
