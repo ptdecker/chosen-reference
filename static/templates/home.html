@@ -1,0 +1,72 @@
+<!-- Fixed navbar -->
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#home">Chosen Demo</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#About">About</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</div>
+
+<!-- Begin page content -->
+
+<div class="container">
+    <div class="page-header">
+        <h2 class="text-center">Chosen Control Bootstrap Node Express Reference Implementation</h2>
+    </div>
+
+    <!-- ** CHOSEN SPECIFIC ** -->
+
+    <form>
+        <div id="container">
+            <div id="content">
+                <div class="side-by-side clearfix">
+                    <div>
+                        <select data-placeholder="Choose a Country..." class="chosen-select" style="width:350px;" multiple tabindex="3">
+                            <option value=""></option>
+                            <option value="United States">United States</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="Afghanistan">Afghanistan</option>
+                            <option value="Aland Islands">Aland Islands</option>
+                            <option value="Albania">Albania</option>
+                            <option value="Algeria">Algeria</option>
+                        </select>
+                    </div>
+                </div>
+                <script src="http://localhost:8080/content/chosen.jquery.min.js"></script>
+                <script type="text/javascript">
+                    var config = {
+                        '.chosen-select'           : {},
+                        '.chosen-select-deselect'  : {allow_single_deselect:true},
+                        '.chosen-select-no-single' : {disable_search_threshold:10},
+                        '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
+                        '.chosen-select-width'     : {width:"95%"}
+                    }
+                    for (var selector in config) {
+                        $(selector).chosen(config[selector]);
+                    }
+                </script>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+<!-- Begin footer -->
+
+<div class="footer">
+    <div class="container">
+        <p class="text-muted"><a href="http://github.com/ptdecker">P. Todd Decker</a></p>
+    </div>
+</div>

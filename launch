@@ -1,0 +1,71 @@
+#!/bin/bash
+#A simple bash script to check prerequisite services and then launch
+#node.js in a MySQL-NodeJS stack with Express session persistance using
+#redis.
+#
+# Assumes:
+#    - apps are stored in './app'
+#
+# Usage: launch <app name>
+#
+
+# Define ANSI (ISO 6429) escape sequences for colorization of feedback messages
+
+blue='\E[34m'
+yellow='\E[33m'
+green='\E[32m'
+red='\E[31m'
+reset='\E[0m'
+bold='\E[1m'
+
+# Define standard feedback colorized text
+
+info=$blue'[INFO]'$reset
+warn=$yellow'[WARNING]'$reset
+error=$red'\n[ERROR]'$reset
+check=$bold$green'check'$reset
+negative=$red'negative'$reset
+
+# Get things started
+
+clear
+echo -e $info'Welcome to the '$bold$green'LigoEngine'$reset' startup bash script.'
+echo -e $info'Running pre-launch checklist...'
+
+# Validate that the Redis service is running
+
+echo -en $info'  - Redis service running? '
+upcheck=$(pgrep redis | wc -l);
+if [ $upcheck -ge 1 ]; then
+    echo -e $check
+else
+    echo -e $negative
+    echo -e $error'redis service is not running'
+    exit 1
+fi
+
+# Validate that the MySQL service is running
+
+echo -en $info'  - MySQL service running? '
+upcheck=$(pgrep mysql | wc -l);
+if [ $upcheck -ge 1 ]; then
+    echo -e $check
+else
+    echo -e $negative
+    echo -e $error'MySQL status check indicates an error'
+    exit 1
+fi
+
+# If an application name was provided on the command line, pass it to node.js;
+# otherwise, start node.js in REPL mode.
+
+if [ -z "$1" ]; then
+    echo -e $info'Starting Node.js REPL interface (Ctrl-C twice to quit)...'
+    nodejs
+else
+    echo -e $info'Starting Node.js with '$1'...'
+    cd ./app
+    nodejs $1
+    cd ..
+fi
+
