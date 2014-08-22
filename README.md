@@ -7,21 +7,27 @@ Created to make sure I had somewhat of an understanding of the minimum requireme
 
 * Repository Structure
 
+```
     app/          application scripts directory
     launch        bash script to start LigoEngine
     README.md     this file
     static/        static front-end site content
+```
 
 * Installing (from the directory where your storing your projects):
 
+```
     $ git clone https://github.com/ptdecker/chosen-reference.git
     $ cd chosen-reference/app
     $ npm update
     $ cd ..
+```
 
 * Running
 
+```
     $ ./launch server.js
+```
 
 All this assumes Ubuntu 14.04.
 
