@@ -1,6 +1,9 @@
-<<<<<<< HEAD
-Chosen Control Bootstrap Node Express Reference Implemention
-============================================================
+chosen-reference
+================
+
+A reference implementation of the Harvest 'chosen' select box library within an Express Node.js environment with Bootstrap
+
+Created to make sure I had somewhat of an understanding of the minimum requirements needed to implement the Harvest 'chosen' select box within another private project being developed. This is a minimum implementation of 'chosen' within that environment. The Express approach used is based upon the structure suggested in Marc Wandschneider's "Learning Node.js" book which I have mixed reviews on at this point--but, at least it got things started. Anyway, I post t here in case it can help someone else in their quest sometime.
 
 * Repository Structure
 
@@ -9,9 +12,16 @@ Chosen Control Bootstrap Node Express Reference Implemention
     README.md     this file
     static/        static front-end site content
 
-=======
-chosen-reference
-================
+* Installing (from the directory where your storing your projects):
 
-A reference implementation of the Harvest 'chosen' select box library within an Express Node.js environment with Bootstrap
->>>>>>> b2036b7cd61339fb092ff3506256e88b9da75332
+    $ git clone https://github.com/ptdecker/chosen-reference.git
+    $ cd chosen-reference
+    $ npm update
+
+* Running
+
+    $ ./launch server.js
+
+All this assumes Ubuntu 14.04.
+
+Any and all suggestions are welcome. At this point, I know of one issue (see [issues](https://github.com/ptdecker/chosen-reference/issues).
